@@ -1,0 +1,35 @@
+<html>
+
+<body>
+    <div class="container py-5 text-center">
+        <div class="row">
+            <div *ngFor="let movie of moviesContainer; let i = index" class="col-md-4 text-light">
+                <div class="movie-card my-4">
+                    <a [routerLink]="['/movieDetails', i]">
+                        <img class="img-fluid" [src]="imgSrc+movie.poster_path">
+                        <div class="movie-desc p-3">
+                            <h2> {{movie.title | slice:0:30}} </h2>
+                            <fa-icon [icon]="faCoffee"></fa-icon>
+                            <h4 class="text-light"> Rate {{movie.vote_average}} </h4>
+                            <a> See more </a>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container d-flex justify-content-center">
+        <div class="row">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item page-link" (click)="prevPage()">Previous</li>
+                    <li class="page-item page-link" *ngFor="let p of pages" (click)="changePage(p)">{{p}}</li>
+                    <li class="page-item page-link" (click)="nextPage()">Next</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</body>
+
+</html>

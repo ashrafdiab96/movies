@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img class="img-fluid" [src]="imgSrc+movieDetail.poster_path">
+        </div>
+        <div class="col-md-6 text-light d-flex justify-content-center align-items-center text-center">
+            <p><span class="span1">{{movieDetail.title}}</span><br><span>{{movieDetail.release_date}}</span><br><span class="span2 text-muted">{{movieDetail.overview}}</span><br><span>Rate: {{movieDetail.vote_average}}</span></p>
+        </div>
+    </div>
+</div>

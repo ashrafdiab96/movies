@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "MyMovies",
+      "public": "dist/MyMovies",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

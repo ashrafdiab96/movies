@@ -1,0 +1,39 @@
+body {
+    background-color: #13151f;
+}
+
+.movie-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 35px 0px #fff;
+}
+
+.movie-desc {
+    position: absolute;
+    top: 100%;
+    left: 15px;
+    right: 15px;
+    height: 92%;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: top 1s;
+    overflow: hidden;
+}
+
+.movie-card:hover .movie-desc {
+    top: 15px;
+}
+
+.movie-card:hover img {
+    transform: scale(1.2, 1.2);
+}
+
+.movie-card img {
+    transition: transform 1s;
+}
+
+.pagination .page-link {
+    cursor: pointer;
+}

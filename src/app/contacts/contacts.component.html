@@ -1,0 +1,63 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+    <div class="container text-light py-5">
+        <div class="row">
+            <div class="col-md-6 myForm py-5">
+                <form [formGroup]='contactsForm' (ngSubmit)='saveDorm()'>
+                    <div class="form-group">
+                        <label>First name</label>
+                        <input class="form-control" formControlName='firstName' type="text" name="fname">
+                        <div *ngIf='contactsForm.controls.firstName.touched && contactsForm.controls.firstName.errors != null' class="alert alert-danger p-2 my-2">
+                            * This field is required<br> * Name must be at least 3 characters !
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Last name</label>
+                        <input class="form-control" formControlName='lastName' type="text" name="lname">
+                        <div *ngIf='contactsForm.controls.lastName.touched && contactsForm.controls.lastName.errors != null' class="alert alert-danger p-2 my-2">
+                            * This field is required<br> * Name must be at least 3 characters !
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input class="form-control" formControlName='phone' type="text" name="phone">
+                        <div *ngIf='contactsForm.controls.phone.touched && contactsForm.controls.phone.errors != null' class="alert alert-danger p-2 my-2">
+                            * This field is required<br> * Phone number must be 11 numbers begins with 02 or 002 or not, and 010, 011, 012 or 015 and 8 numbers
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input class="form-control" formControlName='email' type="text" name="email">
+                        <div *ngIf='contactsForm.controls.email.touched && contactsForm.controls.email.errors != null' class="alert alert-danger p-2 my-2">
+                            * This field is required<br> * Email must be as: username@mail.com !
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea class="form-control" formControlName='message' type="text" name="message"></textarea>
+                        <div *ngIf='contactsForm.controls.message.touched && contactsForm.controls.message.errors != null' class="alert alert-danger p-2 my-2">
+                            * This field is required
+                        </div>
+                    </div>
+                    <div class="form-group d-flex justify-content-center">
+                        <button [disabled]='contactsForm.invalid' class="btn btn-warning text-light w-25" type="submit"> Send </button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 d-flex justify-content-center align-items-center text-center">
+                <div class="message">
+                    <p><span class="span1">Welcome to our service</span><br><span class="span2"> We are here for you, take your message and we will answer you when see it . </span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
